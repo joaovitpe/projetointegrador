@@ -9,38 +9,59 @@ header {
     padding-top: 10px;
     text-align: center;
     border: solid 1px black;        
-    height: 75px;
+    height: 40px;
     margin-top: 10px;
+    background-color: rgb(84, 25, 114);
 
 }
 #textoP{
-    position: absolute;
+    position: fixed;
     width: 300px;
     height: 25px;
-    right: 50%;
+    right: 45%;
     padding-left: 5px;
 
     border: none;
     border:solid 1px #ccc;
     border-radius: 10px;
+    background-color: rgb(141, 42, 190);
 }
 
-#pesquisa button{
+::placeholder { /* Muda a cor do plaholder do cabeçalho*/
+    color: rgb(255, 255, 255);
+  }
 
-    position: absolute;
-    right: 50%;
+#pesquisa button{
+    position: fixed;
+    right: 45%;
     border: none;
     background: none;
     top: 24px;
+
 }
 
 #menu{
-    position: absolute;
+    position: fixed;
+    height: 35px;
+    width: 35px;
     left: 1.5%;
+    border:none;
+    background: none;
 
 }
 #login{
-    position: absolute;
+    position: fixed;
     right: 1.5%;
+    height: 30px;
+    width: 30px;
+    border:none;
+    background: none;
 }
 
+#login img{
+    position: absolute;
+    height: 35px;
+    width: 35px;
+    right: 1%;
+    top: 0.5%
+}
