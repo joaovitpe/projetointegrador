@@ -69,13 +69,42 @@ header {
 }
 
 /*aqui termina o cabeçalho*/
+
+/*aqui começa os destaques*/
+#destaques{
+    color: white;
+    margin: auto;
+    margin-top: 25px;
+    border: solid 1px black;
+    width: 85%;
+    
+}
+#destaques h1{
+    position: relative;
+    margin-top: 3%;
+    font-family: 'Lexend Zetta', sans-serif;
+}
+
+#tracoD{
+    position: absolute;
+    width: 25px;
+    left: 120px;
+    top: 120px;
+}
+/*div dentro do destaques*/
+#livroDestaque img{
+    margin-left: 300px;
+    width: 300px;
+}
+
+
 .elipseFodase{
     position: absolute;
     width: 600px;
     height: 500px;
     left: 50%;
     transform: translateX(-50%);
-    top: 32%;
+    top: 20%;
 
     background: #9917D6;
     mix-blend-mode: normal;
