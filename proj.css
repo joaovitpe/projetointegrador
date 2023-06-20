@@ -69,10 +69,10 @@ header {
 }
 
 /*aqui termina o cabeçalho*/
-.elipseFodase{
+#elipseFodase{
     position: absolute;
-    width:max-content;
-    height:max-content;
+    width:600px;
+    height:600px;
     left: 50%;
     transform: translateX(-50%);
     top: 20%;
@@ -88,12 +88,14 @@ header {
     margin: auto;
     margin-top: 15px;
     width: 85%;
+
     
 }
 
 #destaquesT{
     position: absolute;
     margin-top: 3%;
+    height: fit-content;
     font-family: 'Lexend Zetta', sans-serif;
 }
 
@@ -109,7 +111,10 @@ header {
 #livroDestaque{
     position: absolute;
     border: solid 1px black;
-    top: 33%;
+    top: 225px;
+    left: 50%;
+    transform: translateX(-50%);
+
 }
 #livroDestaque img{
     margin-left: 300px;
