@@ -71,8 +71,8 @@ header {
 /*aqui termina o cabeçalho*/
 #elipseFodase{
     position: absolute;
-    width:600px;
-    height:600px;
+    width: 1666px;
+    height: 850px;
     left: 50%;
     transform: translateX(-50%);
     top: 20%;
@@ -88,7 +88,8 @@ header {
     margin: auto;
     margin-top: 15px;
     width: 85%;
-
+    height: 750px;
+    
     
 }
 
