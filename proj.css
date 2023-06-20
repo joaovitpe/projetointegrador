@@ -110,10 +110,12 @@ header {
 /*div dentro do destaques*/
 #livroDestaque{
     position: absolute;
-    border: solid 1px black;
     top: 225px;
     left: 50%;
     transform: translateX(-50%);
+
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
 
 }
 #livroDestaque img{
