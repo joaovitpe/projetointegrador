@@ -1,4 +1,4 @@
-body {
+ body {
     margin: 0;
     padding: 0;
     background: #5D0586;
@@ -69,44 +69,49 @@ header {
 }
 
 /*aqui termina o cabeçalho*/
+.elipseFodase{
+    position: absolute;
+    width:max-content;
+    height:max-content;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 20%;
+    background: #9917D6;
+    border-radius: 50%;
+    mix-blend-mode: normal;
+    filter: blur(250px);
+}
 
 /*aqui começa os destaques*/
 #destaques{
     color: white;
     margin: auto;
-    margin-top: 25px;
-    border: solid 1px black;
+    margin-top: 15px;
     width: 85%;
     
 }
-#destaques h1{
-    position: relative;
+
+#destaquesT{
+    position: absolute;
     margin-top: 3%;
     font-family: 'Lexend Zetta', sans-serif;
 }
 
-#tracoD{
-    position: absolute;
-    width: 25px;
-    left: 120px;
-    top: 120px;
+#destaquesT img{
+    position: relative;
+    width: 30px;
+    bottom: 75px;
+    right: 10%;
 }
+
+
 /*div dentro do destaques*/
+#livroDestaque{
+    position: absolute;
+    border: solid 1px black;
+    top: 33%;
+}
 #livroDestaque img{
     margin-left: 300px;
     width: 300px;
-}
-
-
-.elipseFodase{
-    position: absolute;
-    width: 600px;
-    height: 500px;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 20%;
-
-    background: #9917D6;
-    mix-blend-mode: normal;
-    filter: blur(250px);
 }
