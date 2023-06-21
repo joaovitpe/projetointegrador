@@ -7,48 +7,53 @@
 }
 /*aqui começa o cabeçalho*/
 header {
-    padding-top: 10px;
-    text-align: center;
-    height: 40px;
+    top: 0;
+    left: 0;
+    position: fixed;
+    height: 50px;
+    width: 100%;
     background: #11031280;
-    border: 1px solid #000000;
+
 }
 
 #textoP{
-    position: fixed;
+    position: relative;
     width: 300px;
     height: 25px;
-    right: 45%;
-    padding-left: 5px;
+    top: -15px;
+    left: 45%;
+    transform: translateX(-45%);
+    padding-left: 10px;
     color: white;
-
-    border: none;
     border:solid 1px #ccc;
     border-radius: 25px;
     background-color: rgb(141, 42, 190);
 }
 
-::placeholder { /* Muda a cor do plaholder do cabeçalho*/
+::placeholder { /* Muda a cor do placeholder do cabeçalho*/
     color: rgb(255, 255, 255);
   }
 
-#pesquisa button{
-    position: fixed;
-    right: 45.2%;
+#botaoP{
+    position: relative;
+    top: -8px;
+    left: 35.3%;
     border: none;
     background: none;
-    top: 13px;
-
 }
 
-#pesquisa img{
+#imgP{
+    position: relative;
+    top: 0px;
+    left: 0px;
     width: 25px;
 }
 
 #menu{
-    position: fixed;
+    position: relative;
     width: 50px;
-    left: 1%;
+    top: 5px;
+    left: 0px;
     border:none;
     background: none;
 }
@@ -58,13 +63,16 @@ header {
 }
 
 #login{
-    position: fixed;
-    right: 1.5%;
+    position: relative;
+    top: -2px;
+    left: 75.5%;
     border:none;
     background: none;
 }
 
 #login img{
+    top: 0px;
+    left: 0px;
     width: 35px;
 }
 
