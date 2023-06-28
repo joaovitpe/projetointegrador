@@ -133,16 +133,32 @@ header {
 
 }
 #livroDestaque h2{
-    position: absolute;
+    position: relative;
     font-weight: normal;
     font-size: 25px;
-    top: 1.5%;
-    left: 50%;
+    text-align: center;
+    bottom: 380px;
+}
+#livroDestaque #sinopse{
+    position: relative;
+    bottom: 350px;
+    left: 275px;
 }
 
-#livroDestaque img{
+#livroDestaque #imagemL{
     margin-right: 800px;
     width: 250px;
     height: 380px;
     border-radius: 15px 0px 0px 15px;
 }
+
+#livroDestaque #botao{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 100%;
+    width: 50px;
+    background: none;
+
+}
+
