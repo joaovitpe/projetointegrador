@@ -1,133 +1,386 @@
- body {
+* {
     margin: 0;
     padding: 0;
     background: #5D0586;
+    color: #fff;
+    user-select: none;
     
-    /*color: white;*/
 }
+
 /*aqui começa o cabeçalho*/
 header {
+    position: fixed;
     top: 0;
     left: 0;
-    position: fixed;
-    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
-    background: #11031280;
+    background: rgb(59, 5, 81);
+    z-index: 99;
 
 }
-
 #textoP{
-    position: relative;
-    width: 300px;
+    width: 275px;
     height: 25px;
-    top: -15px;
-    left: 45%;
-    transform: translateX(-45%);
-    padding-left: 10px;
-    color: white;
-    border:solid 1px #ccc;
+    padding: 2px 0px 2px 15px;
+    border:solid 1px #fff;
     border-radius: 25px;
     background-color: rgb(141, 42, 190);
+    color: white;
 }
-
 ::placeholder { /* Muda a cor do placeholder do cabeçalho*/
-    color: rgb(255, 255, 255);
-  }
-
+    color: white;
+    font-family: 'Baskervville', serif;
+}
+/*MUDAR PARA DENTRO DO INPUT DE TEXTO*/
 #botaoP{
     position: relative;
-    top: -8px;
-    left: 35.3%;
     border: none;
     background: none;
-}
+    right: 13%;
+    top: 7px;
 
+}
 #imgP{
-    position: relative;
-    top: 0px;
-    left: 0px;
     width: 25px;
 }
-
 #menu{
-    position: relative;
     width: 50px;
-    top: 5px;
-    left: 0px;
+    margin-top: 10px;
     border:none;
     background: none;
 }
-
 #menu img{
     width: 48px;
 }
-
 #login{
-    position: relative;
-    top: -2px;
-    left: 75.5%;
+    margin-right: 5px;
     border:none;
     background: none;
 }
-
 #login img{
-    top: 0px;
-    left: 0px;
     width: 35px;
 }
-
 /*aqui termina o cabeçalho*/
 #elipseFodase{
     position: absolute;
-    width: 1666px;
+    width: 100%;
     height: 850px;
     left: 50%;
     transform: translateX(-50%);
-    top: 20%;
-    background: #9917D6;
+    top: 15%;
+    background: rgb(153, 23, 214);
     border-radius: 50%;
     mix-blend-mode: normal;
     filter: blur(250px);
+    z-index: -999;
 }
-
 /*aqui começa os destaques*/
 #destaques{
-    color: white;
-    margin: auto;
-    margin-top: 15px;
-    width: 85%;
+    position: absolute;
+    width: 100%;
     height: 750px;
-    
+    display: flex;
+    align-items: center;
+    justify-content: center;
     
 }
-
+#destaques ul{
+    list-style: none;
+}
 #destaquesT{
     position: absolute;
-    margin-top: 3%;
-    height: fit-content;
+    top: 10%;
+    left: 10%;
     font-family: 'Lexend Zetta', sans-serif;
 }
-
 #destaquesT img{
-    position: relative;
+    position: absolute;
     width: 30px;
-    bottom: 75px;
-    right: 10%;
+    top: 8px;
+    left: -30px;    
 }
-
-
 /*div dentro do destaques*/
 #livroDestaque{
     position: absolute;
-    top: 225px;
+    top: 200px;
     left: 50%;
     transform: translateX(-50%);
+    text-transform: uppercase;
+    font-family: 'Baskervville', serif;
+    height: 500px;
+    width: 1300px;
 
     background: rgba(0, 0, 0, 0.4);
     border-radius: 15px;
+    /*esconde todos os livros da recomendação*/
+    opacity: 0;
+}
 
+/*mostra o livro que esta setado como data-active*/
+#livroDestaque[data-active] {
+    opacity: 1;
+}
+
+#livroDestaque h2{
+    position: absolute;
+    font-weight: normal;
+    font-size: 30px;
+    height: fit-content;
+    top: 1.5%;
+    left: 27%;
 }
 #livroDestaque img{
     margin-right: 800px;
     width: 300px;
+    height: 500px;
+    border-radius: 15px 0px 0px 15px;
+}
+a:visited{
+    color: white;
+}
+/*estrelas rating*/
+.rating{
+    position: absolute;
+    top: 20%;
+    left: 27%;
+
+}
+#livroDestaque #nota{
+    position: absolute;
+    background: rgb(0, 255, 0); 
+    padding: 7px;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 5px;
+    left: 200px;
+}
+
+.star{
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background-image: url('star.png'); /* Substitua 'star.png' pela sua imagem de estrela preenchida */
+    background-size: cover;
+    background-position: center;
+    direction: rtl;
+
+    
+}
+#categoria{
+    position: absolute;
+    top: 12%;
+    left: 27%;
+}
+.botoes {  
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; 
+}
+
+.botoes #botaoD{
+    background: none;
+    cursor: pointer;
+    border: none;
+    filter: drop-shadow(-10px 0px 0px rgba(0, 0, 0, 0.25));
+}
+.botoes #botaoE{
+    background: none;
+    cursor: pointer;
+    border: none;
+    filter: drop-shadow(10px 0px 0px rgba(0, 0, 0, 0.25));
+}
+#sinopse{
+    position: absolute;
+    width: 70%;
+    top: 27%;
+    left: 27%;
+    
+}
+
+
+/*Aqui começa os recomendados */
+
+.barra{
+    width: 75px;
+    height: 3px;
+    background: black;
+    margin: 6px;
+    cursor: pointer;
+}
+
+
+/*Aqui começa a div de livros*/
+.categoriaSlide{
+    position: absolute;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 400px;
+    top: 765px;
+    margin-bottom: -100px;
+
+}
+#categoriaTitulo{
+    position: absolute;
+    display: flex;
+    font-family: 'Lexend Zetta', sans-serif;
+    text-transform: uppercase;
+    white-space: nowrap;
+    left: 10%;
+}
+#categoriaTitulo img{
+    width: 25px;
+}
+.livros{
+    position: absolute;
+    top: 100px;
+    display: grid;
+    grid-auto-flow: column;
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 15px;
+}
+.imagem img{
+    width: 170px;
+    height: 250px;
+    border-radius: 15px;
+    object-fit: cover;
+    cursor: pointer;
+}
+.card{
+    list-style: none;
+}
+
+.card .nota{
+    position: absolute;
+    padding: 10px;
+    bottom: 30px;
+    max-width: 10px;
+    margin-right: 140px;
+    border-radius: 0px 15px 0px 15px;
+    /*alterar no js*/background: rgb(0, 255, 0);
+
+}
+
+/*muda o tamanho da div destaques quando a resolução for menor que 1367*/
+@media (max-width:1366px) {
+    #livroDestaque {
+      width: auto;
+    }
+    #livroDestaque h2, #sinopse, .rating, #categoria{
+        left: 30%;
+    }
+
+  }
+
+/*pop up*/
+dialog{
+    border: none;
+    border-radius: 10px;
+    width: 30%;
+    height: 450px;
+    background: linear-gradient(180deg, #FFF 0%, #FAFAFA 0.01%, #F5F5F5 50%, #5D0586 100%);
+    font-family: 'Lexend Zetta', sans-serif;
+    }
+
+dialog input {
+    width: 95%;
+    padding: 12px 15px;
+    border-radius: 30px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+.containerLogin ::placeholder{
+    color: black;
+    font-family:'Lexend Zetta', sans-serif
+}
+
+.loginBar{
+    position:absolute;
+    top:0;
+    left:0;
+    width: 30%;
+    height: 100%;
+    background:#7B339D;
+}
+.containerLogin{
+    text-align: center;
+    margin-left: 30%;
+    margin-top: 10%;
+    color: white;
+    
+}
+#loginInput{
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    margin-top: 10px;
+    background: rgba(0, 0, 0, 0.10);
+}
+#loginInput a{
+    position: relative;
+    margin-top: 20px;
+    color: black;
+}
+.containerLogin i{
+    position:absolute;
+    padding: 3px 5px ;
+    border-radius: 500px;
+    background: rgb(88, 84, 84);
+    left: 10px;
+    top: 10px;
+    z-index: 999;
+}
+.containerLogin button{
+    margin-top: 10%;
+    border-radius: 100px;
+    padding: 5px 50px;
+    font-family: 'Lexend Zetta', sans-serif;
+    border: 1px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+}
+#loginBarContent{
+    position: absolute;
+    top: 50%;
+    text-align: center;
+    transform: translateY(-50%);
+    left: 15px;
+}
+#loginBarContent img{
+    width: 50px;
+    height: 50px;
+
+}
+#loginText{
+    color: #5D0586;
+    font-weight: 600;
+}
+/*animacao*/
+dialog[open]{
+    animation: fadein 0.1s ease-in forwards;
+  }
+  
+  @keyframes fadein{
+    0%{
+      opacity:0;
+    }
+    100%{
+      opacity:1;
+      background-color: green;
+    }
+  }
+
+
+footer{
+    position: absolute;
+    background: rgba(0, 0, 0, 0.4);
+    bottom: -120%;
+    width: 100%;
 }

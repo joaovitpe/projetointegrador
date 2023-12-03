@@ -1,0 +1,60 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #5D0586;
+    color: #fff;
+}
+/*aqui começa o cabeçalho*/
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: rgb(59, 5, 81);
+    z-index: 99;
+
+}
+#textoP{
+    width: 300px;
+    height: 25px;
+    border:solid 1px #fff;
+    border-radius: 25px;
+    background-color: rgb(141, 42, 190);
+    color: white;
+}
+::placeholder { /* Muda a cor do placeholder do cabeçalho*/
+    color: white;
+}
+/*MUDAR PARA DENTRO DO INPUT DE TEXTO*/
+#botaoP{
+    position: relative;
+    border: none;
+    background: none;
+    right: 13%;
+    top: 7px;
+
+}
+#imgP{
+    width: 25px;
+}
+#menu{
+    width: 50px;
+    margin-top: 10px;
+    border:none;
+    background: none;
+}
+#menu img{
+    width: 48px;
+}
+#login{
+    margin-right: 5px;
+    border:none;
+    background: none;
+}
+#login img{
+    width: 35px;
+}
+/*aqui termina o cabeçalho*/
