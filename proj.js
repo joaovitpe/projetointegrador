@@ -1,15 +1,15 @@
 const buttons = document.querySelectorAll("[data-carousel-button]")
 const fechar = document.getElementById("fechaBtn")
 
+//Mostrando apenas o primeiro livro
+const firstSlide = document.querySelector("#destaques [data-slides] li:first-child");
 
-
+firstSlide.dataset.active = true;
 
 buttons.forEach(button => {
   button.addEventListener("click", () => {
     const offset = button.dataset.carouselButton === "next" ? 1 : -1
-    const slides = button
-      .closest("[data-carousel]")
-      .querySelector("[data-slides]")
+    const slides = button.closest("[data-carousel]").querySelector("[data-slides]")
 
     const activeSlide = slides.querySelector("[data-active]")
     let newIndex = [...slides.children].indexOf(activeSlide) + offset
@@ -33,3 +33,4 @@ btnLogin.onclick = function(){
 fechar.onclick = function(){
     modal.close();
 }
+

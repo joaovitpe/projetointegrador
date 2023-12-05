@@ -3,10 +3,7 @@ body {
     padding: 0;
     background: #5D0586;
     color: #fff;
-    user-select: none;
-    
 }
-
 /*aqui começa o cabeçalho*/
 header {
     position: fixed;
@@ -65,7 +62,8 @@ header {
 /*aqui termina o cabeçalho*/
 #elipseFodase{
     position: absolute;
-    width: 100%;
+    overflow: hidden;
+    width: 1666px;
     height: 850px;
     left: 50%;
     transform: translateX(-50%);
@@ -79,11 +77,10 @@ header {
 /*aqui começa os destaques*/
 #destaques{
     position: absolute;
-    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%;
     height: 750px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     
 }
 #destaques ul{
@@ -92,14 +89,14 @@ header {
 #destaquesT{
     position: absolute;
     top: 10%;
-    left: 10%;
+    height: fit-content;
     font-family: 'Lexend Zetta', sans-serif;
 }
 #destaquesT img{
     position: absolute;
     width: 30px;
     top: 8px;
-    left: -30px;    
+    left: -30px;
 }
 /*div dentro do destaques*/
 #livroDestaque{
@@ -117,7 +114,6 @@ header {
     /*esconde todos os livros da recomendação*/
     opacity: 0;
 }
-
 /*mostra o livro que esta setado como data-active*/
 #livroDestaque[data-active] {
     opacity: 1;
@@ -126,10 +122,6 @@ header {
 #livroDestaque h2{
     position: absolute;
     font-weight: normal;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    max-width: 950px;
     font-size: 30px;
     top: 1.5%;
     left: 27%;
@@ -160,6 +152,9 @@ a:visited{
     left: 200px;
 }
 
+.rating .star{
+    direction: rtl;
+}
 .star{
     display: inline-block;
     width: 35px;
@@ -167,8 +162,6 @@ a:visited{
     background-image: url('star.png'); /* Substitua 'star.png' pela sua imagem de estrela preenchida */
     background-size: cover;
     background-position: center;
-    direction: rtl;
-
     
 }
 #categoria{
@@ -176,12 +169,23 @@ a:visited{
     top: 12%;
     left: 27%;
 }
-.botoes {  
-    position: absolute;
+/*BUG DO BOTAO DENTRO DA DIV AINDA NAO RESOLVIDO*/
+.botoes {
     top: 50%;
-    width: 82%;
+    transform: translateY(-50%);
+    position: absolute;
     display: flex;
-    justify-content: space-between; 
+    gap: 75%;
+    z-index: 1;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#destaques .botoes{
+    top: 60%;
+    gap: 83%;
+    
 }
 
 .botoes #botaoD{
@@ -196,19 +200,21 @@ a:visited{
     border: none;
     filter: drop-shadow(10px 0px 0px rgba(0, 0, 0, 0.25));
 }
-.categoriaSlide .botoes{
-    left: 10%;
-
-}
 #sinopse{
     position: absolute;
     width: 70%;
     top: 27%;
     left: 27%;
+    
 }
-
-
 /*Aqui começa os recomendados */
+.navigation{
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+}
 
 .barra{
     width: 75px;
@@ -218,6 +224,9 @@ a:visited{
     cursor: pointer;
 }
 
+.select input[type="radio"]:checked+label{
+    background: white; 
+} 
 
 /*Aqui começa a div de livros*/
 .categoriaSlide{
@@ -225,10 +234,10 @@ a:visited{
     width: 100%;
     left: 50%;
     transform: translateX(-50%);
-    height: 400px;
-    top: 765px;
+    height: 350px;
+    margin-top: 50%;
+    min-height: 100vh;
     margin-bottom: -100px;
-
 }
 #categoriaTitulo{
     position: absolute;
@@ -243,12 +252,13 @@ a:visited{
 }
 .livros{
     position: absolute;
-    top: 100px;
+    margin-top: 100px;
     display: grid;
     grid-auto-flow: column;
     left: 50%;
     transform: translateX(-50%);
-    gap: 15px;
+    gap: 10px;
+    overflow: hidden;
 }
 .imagem img{
     width: 170px;
@@ -262,38 +272,25 @@ a:visited{
 }
 
 .card .nota{
-    position: absolute;
-    font-family: 'Martel Sans', sans-serif;
-    font-size: 15px;
-    padding: 7.5px;
-    bottom: 3px;
-    border-radius: 0px 15px 0px 15px;
-    /*alterar no js*/background: rgb(0, 255, 0);
+    position: relative;
+    padding: 7px;
+    bottom: 25px;
+    left: 140px;
+    border-radius: 15px 0px 15px 0px;
+    background: rgb(0, 255, 0);
 
 }
+.categoriaSlide .botoes{
+    top:25%;
+}
 
-/*muda o tamanho da div destaques quando a resolução for menor que 1367*/
-@media (max-width:1366px) {
-    #livroDestaque {
-      width: auto;
-    }
-    #livroDestaque h2, #sinopse, .rating, #categoria{
-        left: 30%;
-    }
-    #livroDestaque h2{
-        max-width: 750px;
-    }
-
-  }
-
-/*pop up*/
 dialog{
     border: none;
     border-radius: 10px;
     width: 30%;
     height: 450px;
     background: linear-gradient(180deg, #FFF 0%, #FAFAFA 0.01%, #F5F5F5 50%, #5D0586 100%);
-    font-family: 'Lexend Zetta', sans-serif;
+    font-family: 'Lexend Zetta', sans-serif
     }
 
 dialog input {
@@ -326,7 +323,7 @@ dialog input {
     
 }
 #loginInput{
-    width: 100%;
+    width: 400px;
     height: 200px;
     border-radius: 10px;
     margin-top: 10px;
@@ -371,24 +368,9 @@ dialog input {
     color: #5D0586;
     font-weight: 600;
 }
-/*animacao*/
-dialog[open]{
-    animation: fadein 0.1s ease-in forwards;
-  }
-  
-  @keyframes fadein{
-    0%{
-      opacity:0;
-    }
-    100%{
-      opacity:1;
-    }
-  }
-
-
-footer {
+footer{
     position: absolute;
     background: rgba(0, 0, 0, 0.4);
-    bottom: -60%;
+    bottom:-105%;
     width: 100%;
 }
