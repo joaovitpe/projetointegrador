@@ -18,8 +18,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="proj.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Baskervville&family=Lexend+Zetta:wght@300&display=swap');
-    </style>  
+        @import url('https://fonts.googleapis.com/css2?family=Baskervville&family=Lexend+Zetta:wght@300&family=Martel+Sans:wght@600&display=swap');
+    </style>
+
     <script src="proj.js" defer></script>
 </head>
 <body>
@@ -56,6 +57,10 @@
         <h1 id="tituloD">DESTAQUES</h1>
         <img src="traco.png">
     </div> 
+    <div class="botoes">
+        <button id="botaoE" data-carousel-button="prev"><img draggable="false" src="botaoE.png"></button>
+        <button id="botaoD" data-carousel-button="next"><img draggable="false" src="botaoD.png"></button>
+    </div> 
     <ul data-slides>
         <?php
         $contadorDestaques = 0;
@@ -72,7 +77,9 @@
                     <span id="nota"><?= $livros['nota'];?></span>
                 </div>
                 <div class="imagemLivro">
+                <a href="livro.php?id=<?= $livros['id']; ?>">
                     <img src="<?= $livros['foto']; ?>">
+                </a>
                 </div>
                 <h2><?=$livros['nome'];?></h2>
                 <p id="categoria">Categorias: <a href=""><?= $livros['categoria'];?></a></p>
@@ -84,10 +91,6 @@
         endwhile;
         ?>
     </ul>
-    <div class="botoes">
-        <button id="botaoE" data-carousel-button="prev"><img draggable="false" src="botaoE.png"></button>
-        <button id="botaoD" data-carousel-button="next"><img draggable="false" src="botaoD.png"></button>
-    </div> 
 </div>
 
     <div class="categoriaSlide">
@@ -106,7 +109,7 @@
             if ($contador < 6): ?>
             <li class="card">
                 <div class="imagem">
-                    <a href=""><img draggable="false" src="<?= $livros['foto'];?>"></a>
+                    <a href="livro.php?id=<?= $livros['id']; ?>"><img draggable="false" src="<?= $livros['foto'];?>"></a>
                 </div>
                 <span class="nota"><?= $livros['nota'];?></span>
             </li>

@@ -4,8 +4,10 @@
     $livroHistoria = "SELECT * FROM livros WHERE categoria LIKE '%História%'";
     $mostrarHistoria = $conn->query($livroHistoria);
 
-    $livrosDestaques = "SELECT * FROM livros WHERE nota > 4";
+    $livrosDestaques = "SELECT * FROM livros WHERE nota > 4.5";
     $mostrarDestaques = $conn->query($livrosDestaques);
+
+    
 
 ?>
 
@@ -64,8 +66,8 @@
     <ul data-slides>
         <?php
         $contadorDestaques = 0;
-        while ($livros = mysqli_fetch_assoc($mostrarDestaques)):
-            if ($contadorDestaques < 4): // Alteração aqui para exibir um livro por vez
+        while ($livros = mysqli_fetch_assoc($mostrarDestaques)): //transforma a consulta em uma array associativa
+            if ($contadorDestaques < 4): // máximo de 4 livros
         ?>
             <li id="livroDestaque">
                 <div class="rating">
@@ -77,12 +79,13 @@
                     <span id="nota"><?= $livros['nota'];?></span>
                 </div>
                 <div class="imagemLivro">
-                    <a href="livro.php?id=<?= $livros['id']; ?>"><img src="<?= $livros['foto']; ?>"></a>
+                    <a id="idLivro" href="livro.php?id=<?= $livros['id']; ?>"><img src="<?= $livros['foto']; ?>"></a>
                 </div>
                 <h2><?=$livros['nome'];?></h2>
                 <p id="categoria">Categorias: <a href=""><?= $livros['categoria'];?></a></p>
                 <p id="sinopse"><?= $livros['sinopse'];?></p>
             </li>
+            
         <?php
             endif;
             $contadorDestaques++;
@@ -107,7 +110,7 @@
             if ($contador < 6): ?>
             <li class="card">
                 <div class="imagem">
-                    <a href="livro.php?id=<?= $livros['id']; ?>"><img draggable="false" src="<?= $livros['foto'];?>"></a>
+                    <a id="idLink" href="livro.php?id=<?= $livros['id']; ?>"><img draggable="false" src="<?= $livros['foto'];?>"></a>
                 </div>
                 <span class="nota"><?= $livros['nota'];?></span>
             </li>
